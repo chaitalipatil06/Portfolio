@@ -31,7 +31,26 @@
 
   /* ---------- Header shadow on scroll ---------- */
   const header = document.querySelector('.site-header');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  const toTop = document.querySelector('.to-top');
+  const coffee = document.querySelector('.to-top-coffee');
+
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+    if (!toTop) return;
+    toTop.classList.toggle('show', window.scrollY > 600);
+    // the mug fills with coffee as you read: empty at the top, full at the bottom
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+    coffee.setAttribute('y', String(50 - progress * 28));
+  };
+
+  if (toTop) {
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      // keyboard and screen reader users land back at the top too
+      document.querySelector('.logo').focus({ preventScroll: true });
+    });
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 

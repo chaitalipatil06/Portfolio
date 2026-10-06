@@ -296,6 +296,40 @@ dd { margin: 0; color: var(--ink-3); }
 
 .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-bottom: 48px; color: var(--ink-2); font-size: 16px; }
 
+/* ---------- Back to top mug ---------- */
+.to-top {
+  position: fixed; z-index: 40;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  width: 64px; height: 64px; padding: 0;
+  border: 2px solid var(--ink); border-radius: 50%;
+  background: var(--pink-soft); color: var(--ink);
+  box-shadow: 0 5px 0 var(--ink); cursor: pointer;
+  display: grid; place-items: center;
+  /* hidden until you scroll; visibility also removes it from the Tab order */
+  opacity: 0; visibility: hidden; transform: translateY(24px) scale(.8);
+  transition: opacity .3s, visibility .3s, transform .4s var(--bounce), box-shadow .2s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top svg { width: 46px; height: 46px; overflow: visible; }
+.to-top-coffee { transition: y .15s linear; }
+.to-top-steam { opacity: 0; }
+.to-top:hover { transform: translateY(-4px) rotate(-8deg); box-shadow: 0 9px 0 var(--ink); }
+.to-top:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--ink); }
+.to-top:hover .to-top-steam, .to-top:focus-visible .to-top-steam { opacity: 1; animation: steam 1.6s ease-in-out infinite; }
+.to-top-label {
+  position: absolute; right: calc(100% + 12px); top: 50%; translate: 8px -50%;
+  white-space: nowrap; font-family: var(--font-hand); font-size: 24px; font-weight: 700;
+  background: var(--white); color: var(--ink); border: 2px solid var(--ink); border-radius: 14px;
+  padding: 2px 12px; opacity: 0; pointer-events: none; transition: opacity .2s, translate .3s var(--bounce);
+}
+.to-top:hover .to-top-label, .to-top:focus-visible .to-top-label { opacity: 1; translate: 0 -50%; }
+@media (max-width: 700px) {
+  .to-top { width: 56px; height: 56px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .to-top svg { width: 40px; height: 40px; }
+  .to-top-label { display: none; }
+}
+
 /* ---------- Hover lift (pointer devices only) ---------- */
 @media (hover: hover) {
   .recipe-card:hover, .project:hover, .hobby:hover { transform: translateY(-8px) rotate(-.5deg); box-shadow: 0 22px 40px rgba(42, 26, 20, .12); }
