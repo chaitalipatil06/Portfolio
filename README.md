@@ -18,7 +18,7 @@ images/        photos, favicon, social preview image
 2. On the new repo page, click **uploading an existing file**.
 3. Drag in `index.html`, `styles.css`, `script.js`, `README.md` and the whole `images` folder. Click **Commit changes**.
 4. Go to **Settings → Pages**. Under "Build and deployment", set Source to **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
-5. Wait a minute or two, then visit **https://chaitalipatil02.github.io**.
+5. Wait a minute or two, then visit **https://chaitalipatil06.github.io/Portfolio/**.
 
 Every time you upload a changed file, the site updates by itself within a minute.
 
