@@ -424,3 +424,18 @@ dd { margin: 0; color: var(--ink-3); }
 @media (max-width: 700px) {
   .toolkit { grid-template-columns: 1fr; }
 }
+
+/* ---------- How I brew: 2 x 2 steps with a real example ---------- */
+.recipe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.recipe-proof {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 2px dashed rgba(42, 26, 20, .25);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.recipe-card .recipe-proof { color: var(--ink-2); }
+.recipe-proof strong { color: var(--ink); }
+@media (max-width: 700px) {
+  .recipe { grid-template-columns: 1fr; }
+}
