@@ -120,7 +120,8 @@
 
     <!-- ============ PROJECTS ============
          To add a project: copy one <article class="project">…</article> block,
-         set data-kind="work" or data-kind="side", and change the text + image. -->
+         set data-kind="work" or data-kind="side", and change the text + image.
+         Every card follows the same story: The problem / What I did / What it shows. -->
     <section id="work" class="band" aria-labelledby="work-title">
       <div class="container">
         <div class="work-head">
@@ -137,27 +138,34 @@
         <p class="visually-hidden" id="filter-status" aria-live="polite"></p>
 
         <div class="projects">
-          <article class="project reveal" data-kind="work">
-            <div class="project-media tint-green" aria-hidden="true">
-              <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 95a70 70 0 0 1 140 0"/><path d="M100 95l34-40" stroke="#C23E66" stroke-width="5"/><circle cx="100" cy="95" r="7" fill="#2A1A14"/><path d="M30 95h-8M170 95h8M100 25v-8M50 45l-6-6M150 45l6-6"/></svg>
+
+          <!-- SIDE · SavePay Tracker -->
+          <article class="project reveal" data-kind="side">
+            <div class="project-media tint-pink" aria-hidden="true">
+              <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="62" y="10" width="76" height="100" rx="12" fill="#FFFFFF"/><path d="M90 20h20"/><rect x="74" y="36" width="52" height="8" rx="4" fill="#E7C9D2" stroke="none"/><rect x="74" y="36" width="30" height="8" rx="4" fill="#C23E66" stroke="none"/><rect x="74" y="54" width="52" height="8" rx="4" fill="#E7C9D2" stroke="none"/><rect x="74" y="54" width="44" height="8" rx="4" fill="#C23E66" stroke="none"/><rect x="74" y="72" width="52" height="8" rx="4" fill="#E7C9D2" stroke="none"/><rect x="74" y="72" width="18" height="8" rx="4" fill="#C23E66" stroke="none"/><circle cx="100" cy="96" r="5"/></svg>
             </div>
             <div class="project-body">
-              <p class="tag">Feature idea · Ignition Perspective</p>
-              <h3>Flow Meter Health Score</h3>
-              <p>A feature I proposed at Farm Data Systems: score each flow meter's health from flow rate and flow total during irrigation, so growers spot problems before they waste water.</p>
+              <p class="tag">Product design · Installable web app · Built with Claude</p>
+              <h3>SavePay Tracker</h3>
+              <p>A budgeting app that tells you what you can still spend before payday, without ever asking for a bank login.</p>
               <details>
                 <summary>Read the story</summary>
                 <dl>
-                  <dt>The problem</dt><dd>Raw flow numbers don't tell a grower whether a meter is healthy. Spotting a failing one meant digging through readings.</dd>
-                  <dt>What I did</dt><dd>Proposed combining flow rate and flow total during irrigation into one easy health score, as part of the Ignition Vision and Perspective redesign.</dd>
-                  <dt>Why it matters</dt><dd>One glanceable signal instead of a spreadsheet of numbers, built around how growers actually check their systems.</dd>
+                  <dt>The problem</dt><dd>Budgeting apps want bank access before they tell you anything useful. I just wanted to know how much I could spend on fun and still hit my savings goals.</dd>
+                  <dt>What I did</dt><dd>Wrote the full product spec and built the app with Claude: the first-run setup, spending bars that turn orange at 50% and red at 85%, per-paycheck savings math and reminders. I made the trade-off calls: an installable web app instead of App Store fees, receipt reading on the phone instead of a paid cloud AI that would send receipts off the device, and no accounts, so data never leaves the phone. Then I tested it on my own phone and worked through install and camera issues as they came up.</dd>
+                  <dt>What it shows</dt><dd>I can take a problem all the way to a live product and use AI to move fast while making the product decisions myself. Accessibility was built in from day one: a low-vision-friendly font, and color is never the only signal. Using it daily changed my own spending habits.</dd>
                 </dl>
               </details>
+              <div class="project-links">
+                <a class="text-link" href="https://chaitalipatil06.github.io/SavePayTracker/" target="_blank" rel="noopener">Try it live <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">→</span></a>
+                <a class="text-link" href="https://github.com/chaitalipatil06/SavePayTracker" target="_blank" rel="noopener">See the code on GitHub <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">→</span></a>
+              </div>
             </div>
           </article>
 
+          <!-- WORK · HR tools (Fresno County Superintendent of Schools) -->
           <article class="project reveal" data-kind="work">
-            <div class="project-media tint-pink" aria-hidden="true">
+            <div class="project-media tint-green" aria-hidden="true">
               <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="25" y="15" width="150" height="90" rx="10" fill="#FFFFFF"/><path d="M25 35h150"/><rect x="38" y="47" width="40" height="8" rx="4" fill="#C23E66" stroke="none"/><rect x="84" y="47" width="40" height="8" rx="4" fill="#E7C9D2" stroke="none"/><path d="M40 70h120M40 85h80"/></svg>
             </div>
             <div class="project-body">
@@ -167,63 +175,78 @@
               <details>
                 <summary>Read the story</summary>
                 <dl>
-                  <dt>The problem</dt><dd>HR and payroll staff across 36 districts were working in older ERP workflows, and some ready-made components couldn't do what they needed.</dd>
-                  <dt>What I did</dt><dd>Built tabbed Employee Update flows with modals and dynamic navigation, report-specific data models in Telerik Report Designer, and swapped constrained components for custom HTML, CSS and Blazor. Shipped through the CI/CD pipeline.</dd>
-                  <dt>What I learned</dt><dd>The right component is the one that fits the user's task, not the one that came in the box.</dd>
+                  <dt>The problem</dt><dd>HR and payroll staff across 36 districts were working in aging ERP screens, and some off-the-shelf components couldn't match how they actually worked.</dd>
+                  <dt>What I did</dt><dd>Built tabbed Employee Update flows with modals and dynamic navigation, created report-specific data models in Telerik Report Designer, and replaced components that boxed users in with custom HTML, CSS and Blazor. Shipped through the CI/CD pipeline.</dd>
+                  <dt>What it shows</dt><dd>I can work inside a large legacy system, ship to real users, and put the user's workflow ahead of the default tool.</dd>
                 </dl>
               </details>
             </div>
           </article>
 
-          <article class="project reveal" data-kind="work">
-            <div class="project-media tint-green" aria-hidden="true">
-              <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="64" r="42" fill="#FFFFFF"/><path d="M100 64V38M100 64l18 12"/><path d="M90 12h20M100 12v10"/><circle cx="100" cy="64" r="5" fill="#C23E66" stroke="none"/></svg>
-            </div>
-            <div class="project-body">
-              <p class="tag">Feature idea · Zoho Desk</p>
-              <h3>Automatic agent time tracking</h3>
-              <p>A timer that starts when an agent opens a ticket and reports only to management, so we measure real handling time without adding pressure on the team.</p>
-              <details>
-                <summary>Read the story</summary>
-                <dl>
-                  <dt>The problem</dt><dd>Management had no reliable way to see how long tickets took or where agents needed support.</dd>
-                  <dt>What I did</dt><dd>Proposed and set up automatic time tracking in Zoho Desk. It starts when a ticket is opened, and only managers can see it.</dd>
-                  <dt>Why it matters</dt><dd>A visible timer changes how people work. Keeping it in the background gives managers honest data and lets agents focus on the customer.</dd>
-                </dl>
-              </details>
-            </div>
-          </article>
-
-          <article class="project reveal" data-kind="work">
-            <div class="project-media tint-blue" aria-hidden="true">
-              <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="60" r="38" fill="#FFFFFF"/><circle cx="100" cy="38" r="7" fill="#2A1A14"/><path d="M100 50v34M84 62h32M88 98l12-14 12 14"/></svg>
-            </div>
-            <div class="project-body">
-              <p class="tag">Web design · Accessibility · HTML/CSS</p>
-              <h3>Accessible public-health website</h3>
-              <p>Pages for the Central California Public Health Consortium, designed around ADA compliance, clear page flow and a consistent experience.</p>
-              <details>
-                <summary>Read the story</summary>
-                <dl>
-                  <dt>The problem</dt><dd>Public-health information has to work for everyone, but the site builder's defaults weren't enough to meet design and usability needs.</dd>
-                  <dt>What I did</dt><dd>Structured pages around accessibility and intuitive flow, and added targeted HTML and CSS wherever GoDaddy's built-in options fell short.</dd>
-                </dl>
-              </details>
-            </div>
-          </article>
-
+          <!-- SIDE · Virtual Paint Board (team graduation project) -->
           <article class="project reveal" data-kind="side">
             <div class="project-media tint-lavender" aria-hidden="true">
               <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 90c30-60 60 20 90-30s40 10 50-20" stroke="#C23E66" stroke-width="5"/><path d="M150 70l12-30 8 4-6 30M160 44l-4-12M166 46l2-12"/></svg>
             </div>
             <div class="project-body">
-              <p class="tag">Python · OpenCV · MediaPipe</p>
+              <p class="tag">Python · OpenCV · MediaPipe · Team project</p>
               <h3>Virtual Paint Board</h3>
-              <p>Draw in mid-air with hand gestures. I tuned the computer-vision pipeline to respond in under 50 ms, so it feels like real paint.</p>
+              <p>Draw in mid-air with hand gestures and a webcam. No mouse, no stylus, no touchscreen.</p>
+              <details>
+                <summary>Read the story</summary>
+                <dl>
+                  <dt>The problem</dt><dd>Drawing on a screen usually needs a mouse, stylus or touchscreen. We wanted to see whether a plain webcam and your hand could be enough.</dd>
+                  <dt>What we built</dt><dd>A gesture-controlled canvas that tracks 21 points on the hand. One finger up draws, two fingers erase, and an open hand picks a shape, so switching tools never needs a menu.</dd>
+                  <dt>What it shows</dt><dd>I enjoy turning a messy, real-time input like a moving hand into an interaction that feels simple to use.</dd>
+                </dl>
+              </details>
+              <!-- TODO: replace with the exact repo URL once the code is uploaded -->
               <a class="text-link" href="https://github.com/chaitalipatil06" target="_blank" rel="noopener">See the code on GitHub <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">→</span></a>
             </div>
           </article>
 
+          <!-- SIDE · Back of House (in progress) -->
+          <article class="project reveal" data-kind="side">
+            <div class="project-media tint-blue" aria-hidden="true">
+              <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M62 44h68v34a24 24 0 0 1-24 24H86a24 24 0 0 1-24-24z" fill="#FFFFFF"/><path d="M130 52h8a12 12 0 0 1 0 24h-8"/><path d="M80 20c-4 6 4 10 0 16M96 16c-4 6 4 10 0 16M112 20c-4 6 4 10 0 16" stroke="#C23E66"/><path d="M50 108h100"/></svg>
+            </div>
+            <div class="project-body">
+              <p class="tag">In progress · Next.js · Supabase · Built with Claude</p>
+              <h3>Back of House</h3>
+              <p>An in-house app for the coffee shop I plan to open: staff check-in, stock, reordering, a weather-aware daily menu and recipes.</p>
+              <details>
+                <summary>Read the story</summary>
+                <dl>
+                  <dt>The problem</dt><dd>A small café juggles staff, stock, orders and a menu that should change with the weather and what's on the shelf. New baristas also need to learn fast.</dd>
+                  <dt>What I did</dt><dd>Defined it as one connected system instead of separate tools. Stock builds the reorder list, stock plus weather suggests the day's menu, and every drink links to step-by-step recipes with a practice mode for new staff. I set the design rules: soft pastels with one color per section, a highly readable font, WCAG-checked contrast, and one line of plain help on every screen. The menu always keeps a sugar-free drink and an energy drink when stock allows.</dd>
+                  <dt>What it shows</dt><dd>I design for everyone who touches a tool, including the newest person on shift, and I think in systems, not single screens.</dd>
+                  <dt>Where it's at</dt><dd>The core app is built and passes its tests and accessibility scan. A live demo is next.</dd>
+                </dl>
+              </details>
+            </div>
+          </article>
+
+          <!-- WORK · Public-health website (Central California Public Health Consortium) -->
+          <article class="project reveal" data-kind="work">
+            <div class="project-media tint-pink" aria-hidden="true">
+              <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="60" r="38" fill="#FFFFFF"/><circle cx="100" cy="38" r="7" fill="#2A1A14"/><path d="M100 50v34M84 62h32M88 98l12-14 12 14"/></svg>
+            </div>
+            <div class="project-body">
+              <p class="tag">Web design · Accessibility · HTML/CSS</p>
+              <h3>Accessible public-health website</h3>
+              <p>Pages for the Central California Public Health Consortium, designed so health information works for every visitor.</p>
+              <details>
+                <summary>Read the story</summary>
+                <dl>
+                  <dt>The problem</dt><dd>Public-health information has to work for everyone, but the site builder's defaults fell short on both accessibility and usability.</dd>
+                  <dt>What I did</dt><dd>Structured pages around ADA guidelines and a clear reading flow, kept the experience consistent from page to page, and wrote targeted HTML and CSS wherever GoDaddy's built-in options weren't enough.</dd>
+                  <dt>What it shows</dt><dd>I don't accept a tool's limits as the user's limits. When the builder couldn't do it, I worked around it.</dd>
+                </dl>
+              </details>
+            </div>
+          </article>
+
+          <!-- SIDE · Real-time game simulation -->
           <article class="project reveal" data-kind="side">
             <div class="project-media tint-green" aria-hidden="true">
               <svg viewBox="0 0 200 120" width="200" height="120" fill="none" stroke="#2A1A14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 30h40v30h40v30h60"/><circle cx="30" cy="30" r="8" fill="#C23E66"/><path d="M162 82l12 8-12 8z" fill="#2A1A14"/><rect x="120" y="20" width="22" height="22" rx="4" fill="#FFFFFF"/></svg>
@@ -232,6 +255,7 @@
               <p class="tag">C++ · OOP · Game AI</p>
               <h3>Real-time game simulation</h3>
               <p>An event-driven simulation with AI pathfinding and collision detection, debugged and optimized so it stays responsive.</p>
+              <!-- TODO: add a "Read the story" block once details are confirmed, and link the exact repo -->
               <a class="text-link" href="https://github.com/chaitalipatil06" target="_blank" rel="noopener">See the code on GitHub <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">→</span></a>
             </div>
           </article>
@@ -239,8 +263,9 @@
           <div class="project-soon" data-kind="side">
             <svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M24 10v28M10 24h28"/></svg>
             <p class="soon-title">Fresh batch brewing</p>
-            <p>New side projects land here soon.</p>
+            <p>More side projects are on the way.</p>
           </div>
+
         </div>
       </div>
     </section>
