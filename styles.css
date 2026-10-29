@@ -229,6 +229,7 @@ a:hover { color: var(--pink-deep); }
 .project-body > p:not(.tag) { color: var(--ink-3); }
 .tag { font-size: 14px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
 .text-link { font-weight: 800; display: inline-flex; gap: 6px; align-items: center; min-height: 44px; align-self: flex-start; }
+.project-links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
 
 details { border-top: 2px dashed #D9C6BA; padding-top: 6px; }
 summary {
